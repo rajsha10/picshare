@@ -27,7 +27,9 @@ function App() {
         });
         await provider.send("eth_requestAccounts", []);
         const signer = provider.getSigner();
-        const address = await signer.getAddress();
+        const address = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
         setAccount(address);
         let contractAddress = "Your Contract Address Here";
 
