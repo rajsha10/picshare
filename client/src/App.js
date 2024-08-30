@@ -32,7 +32,7 @@ function App() {
         });
         const address = accounts[0]; 
         setAccount(address);
-        let contractAddress = "Your Contract Address Here";
+        let contractAddress = "0x0e075cB6f980203F8e930a0B527CDbE07F303eAD";
 
         const contract = new ethers.Contract(
           contractAddress,
