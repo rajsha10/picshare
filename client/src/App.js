@@ -1,4 +1,4 @@
-import Upload from './contracts/Upload.sol/Upload.json';
+import Upload from './contracts/Upload.json';
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { BrowserProvider, parseUnits } from "ethers";
@@ -32,7 +32,7 @@ function App() {
         });
         const address = accounts[0]; 
         setAccount(address);
-        let contractAddress = "Your Contract Address Here";
+        let contractAddress = "0xC6bE53b706801cb244923543A600BbCdb829fe89";
 
         const contract = new ethers.Contract(
           contractAddress,

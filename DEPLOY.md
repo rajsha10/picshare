@@ -1,1 +1,3 @@
-contract address : 0x0e075cB6f980203F8e930a0B527CDbE07F303eAD
+contract address : 0xC6bE53b706801cb244923543A600BbCdb829fe89
+
+testnet aia scan link : https://testnet.aiascan.com/address/0xC6bE53b706801cb244923543A600BbCdb829fe89

@@ -1,27 +1,32 @@
-require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 module.exports = {
-  solidity: "0.8.19",
-  paths: {
-    artifacts: "./client/src",
+  solidity: {
+    version: "0.8.19",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
   },
   networks: {
-    opencampus: {
-      url: `https://rpc.open-campus-codex.gelato.digital/`,
-      accounts: [process.env.ACCOUNT_PRIVATE_KEY],
-    },
+    aiaTestnet: {
+      url: process.env.API_URL,
+      chainId: 1320,
+      accounts: [`0x${PRIVATE_KEY}`],
+      timeout: 120000,
+      gas: "auto",
+      gasPrice: "auto",
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
+    }
   },
-  etherscan: {
-    customChains: [
-      {
-        network: "opencampus",
-        chainId: 656476,
-        urls: {
-          apiURL: "https://opencampus-codex.blockscout.com/api",
-          browserURL: "https://opencampus-codex.blockscout.com",
-        },
-      },
-    ],
-  },
+  mocha: {
+    timeout: 120000
+  }
 };
